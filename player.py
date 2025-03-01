@@ -14,6 +14,7 @@ import casino
 import stocks
 import networking as net
 import name_validation
+import chat
 
 game_running = False
 screen = 'terminal'
@@ -375,6 +376,9 @@ def get_input() -> None:
                 elif stdIn == "stocks":
                     ss.indicate_keyboard_hook(active_terminal.index)
                     stocks.module(sockets[1], active_terminal, player_id, name)
+
+                elif stdIn == "chat":
+                    chat.module(sockets[1], player_id, active_terminal, name)
 
                 else:
                     ss.overwrite(COLORS.RED + "Invalid command. Type 'help' for a list of commands.")
