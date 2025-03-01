@@ -378,7 +378,7 @@ def get_input() -> None:
                     stocks.module(sockets[1], active_terminal, player_id, name)
 
                 elif stdIn == "chat":
-                    chat.module(sockets[1], player_id, active_terminal, name)
+                    chat.module(sockets[1], active_terminal, player_id, name)
 
                 else:
                     ss.overwrite(COLORS.RED + "Invalid command. Type 'help' for a list of commands.")
