@@ -305,6 +305,13 @@ def handle_data(data: str, client: socket.socket) -> None:
         handle_casino(data, current_client)
         net.send_message(client, str(current_client.money))
 
+    elif data.startswith('chat_name'):
+        net.send_message(client, str(current_client.name))
+
+    elif data.startswith('chat_message'):
+        #net.send_message(client, str(current_client.))
+        pass
+
 def handle_casino(cmds: str, current_client: Client) -> None:
     """
     Handles casino-related commands for a client by updating their balance.
